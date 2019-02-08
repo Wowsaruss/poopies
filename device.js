@@ -8,7 +8,7 @@ const motionDetection = () => {
     if (err) exit();
     let message = `Movement Detected! ${i++}`;
     console.log(message);
-    axios
+    await axios
       .post(`${process.env.API_GATEWAY}/Prod`, {
         message
       })

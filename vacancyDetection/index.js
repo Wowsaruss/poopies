@@ -8,7 +8,7 @@ exports.handler = async event => {
   let slackMessage = {
     text: 'POOPER ALERT! :poop:\nRestroom #1 Currently Occupied!'
   };
-  axios
+  await axios
     .post(process.env.SLACK_HOOK_URL, JSON.stringify(slackMessage))
     .then(res => {
       console.log('Sent with status 200', res.data);
